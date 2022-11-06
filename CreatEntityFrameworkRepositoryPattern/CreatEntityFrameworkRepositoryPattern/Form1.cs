@@ -38,9 +38,9 @@ namespace CreatEntityFrameworkRepositoryPattern
             creator.CreatIRepository(txtbNamespace.Text);
             creator.CreatIRepository(txtbNamespace.Text, txtbClassName.Text);
             creator.CreatRepository(txtbNamespace.Text);
-            creator.CreatRepository(txtbNamespace.Text, txtbClassName.Text);
-            creator.CreatUnitOfWork(txtbNamespace.Text);
-            creator.CreatIUnitOfWork(txtbNamespace.Text);
+            creator.CreatRepository(txtbNamespace.Text, txtbClassName.Text,txtbModelName.Text);
+            creator.CreatUnitOfWork(txtbNamespace.Text, txtbClassName.Text, txtbModelName.Text);
+            creator.CreatIUnitOfWork(txtbNamespace.Text, txtbClassName.Text);
             Process.Start(creator.FilePath);
 
         }

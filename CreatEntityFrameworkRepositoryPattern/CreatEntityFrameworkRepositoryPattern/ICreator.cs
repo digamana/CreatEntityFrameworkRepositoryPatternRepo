@@ -44,6 +44,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace {strNamespace}" +
  @"
@@ -72,8 +73,8 @@ namespace {strNamespace}" +
         public void CreatIRepository(string strNamespace, string strClassName)
         {
             string Temp =
-
-$@"using System;
+$@"
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -82,7 +83,8 @@ using System.Threading.Tasks;
 namespace {strNamespace}" +
 @"
 {
-" + $@"    public interface I{strClassName}Repository : IRepository<{strClassName}>" + @"
+" + $@"public interface I{strClassName}Repository : IRepository<{strClassName}>
+" + @"
     {
 
     }
@@ -93,12 +95,12 @@ namespace {strNamespace}" +
         }
         public void CreatRepository(string strNamespace)
         {
-            string Temp2 = $@"UnitOfWork.Model.Repositories";
             string Temp =
 $@"using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -173,7 +175,7 @@ namespace {strNamespace}" +
             File.WriteAllText(Path.Combine(FilePath, $"Repository.cs"), Temp);
             string readText = File.ReadAllText(Path.Combine(FilePath, $"Repository.cs"));
         }
-        public void CreatRepository(string strNamespace, string ClassName)
+        public void CreatRepository(string strNamespace, string ClassName,string ModelName)
         {
             string Temp =
 $@"using System;
@@ -187,12 +189,12 @@ namespace {strNamespace}" + @"
 {" + $@"
     public class {ClassName}Repository : Repository<{ClassName}>, I{ClassName}Repository " + @"
     {" + $@"
-        public {ClassName}Repository(EFmodel context) : base(context)" + @"
+        public {ClassName}Repository("+$"{ModelName}"+" context) : base(context)" + @"
         {
         }
-        public EFmodel EFmodel
+        "+$"public {ModelName} {ModelName}"+ @"
         {
-            get { return Context as EFmodel; }
+            get { return Context as "+ $"{ModelName}" + @"; }
         }
     }
 }
@@ -201,7 +203,7 @@ namespace {strNamespace}" + @"
             string readText = File.ReadAllText(Path.Combine(FilePath, $"{ClassName}Repository.cs"));
         }
 
-        public void CreatIUnitOfWork(string strNamespace)
+        public void CreatIUnitOfWork(string strNamespace, string ClassName)
         {
             string Temp =
 $@"using System;
@@ -209,13 +211,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnitOfWork.Model.IRepositories;
 
 namespace {strNamespace}" + @"
 {
     public interface IUnitOfWork : IDisposable
     {
-        //public IDemoSheetRepository DemoSheet { get; private set; }
+        "+ $"I{ClassName}Repository {ClassName}"+@" { get; }
         int Complete();
     }
 }
@@ -223,25 +224,23 @@ namespace {strNamespace}" + @"
             File.WriteAllText(Path.Combine(FilePath, $"IUnitOfWork.cs"), Temp);
             string readText = File.ReadAllText(Path.Combine(FilePath, $"IUnitOfWork.cs"));
         }
-        public void CreatUnitOfWork(string strNamespace)
+        public void CreatUnitOfWork(string strNamespace, string ClassName,string ModelName)
         {
             string Temp =
-@"using System.Collections.Generic;
+$@"using System.Collections.Generic;
 using System.Linq;
-using UnitOfWork.Model.IRepositories;
-using UnitOfWork.Model.Repositories;
 
-namespace UnitOfWork.Model
-{
+namespace {strNamespace}
+"+@"{
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly EFmodel _context;
-        //public IDemoSheetRepository DemoSheet { get; private set; }
+        "+$"private readonly {ModelName} _context;"+@"
+        "+$"public I{ClassName}Repository {ClassName} "+@"{ get; private set; }
 
-        public UnitOfWork(EFmodel context)
+        "+$"public UnitOfWork({ModelName} context)"+@"
         {
             _context = context;
-            // DemoSheet = new DemoSheetRepository(_context);
+             "+$"{ClassName} = new {ClassName}Repository(_context);"+@"
         }
 
         public int Complete()
