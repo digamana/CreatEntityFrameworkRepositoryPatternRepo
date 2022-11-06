@@ -72,8 +72,8 @@ namespace {strNamespace}" +
         public void CreatIRepository(string strNamespace, string strClassName)
         {
             string Temp =
-$@"
-using System;
+
+$@"using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -82,8 +82,7 @@ using System.Threading.Tasks;
 namespace {strNamespace}" +
 @"
 {
-" + $@"public interface I{strClassName}Repository : IRepository<{strClassName}>
-" + @"
+" + $@"    public interface I{strClassName}Repository : IRepository<{strClassName}>" + @"
     {
 
     }

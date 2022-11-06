@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnOpen = new System.Windows.Forms.Button();
             this.btnOutput = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblClassName = new System.Windows.Forms.Label();
-            this.lblNamespace = new System.Windows.Forms.Label();
-            this.txtbClassName = new System.Windows.Forms.TextBox();
             this.txtbNamespace = new System.Windows.Forms.TextBox();
+            this.txtbClassName = new System.Windows.Forms.TextBox();
+            this.lblNamespace = new System.Windows.Forms.Label();
+            this.lblClassName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -58,18 +58,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(438, 51);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // btnOpen
-            // 
-            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOpen.Font = new System.Drawing.Font("微軟正黑體", 9F);
-            this.btnOpen.Location = new System.Drawing.Point(309, 3);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(126, 45);
-            this.btnOpen.TabIndex = 6;
-            this.btnOpen.Text = "OpenFolder";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
             // btnOutput
             // 
             this.btnOutput.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,6 +69,18 @@
             this.btnOutput.Text = "Output";
             this.btnOutput.UseVisualStyleBackColor = true;
             this.btnOutput.Click += new System.EventHandler(this.btnOutput_Click);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOpen.Font = new System.Drawing.Font("微軟正黑體", 9F);
+            this.btnOpen.Location = new System.Drawing.Point(309, 3);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(126, 45);
+            this.btnOpen.TabIndex = 6;
+            this.btnOpen.Text = "OpenFolder";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -101,17 +101,21 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(438, 194);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // lblClassName
+            // txtbNamespace
             // 
-            this.lblClassName.AutoSize = true;
-            this.lblClassName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblClassName.Font = new System.Drawing.Font("微軟正黑體", 9F);
-            this.lblClassName.Location = new System.Drawing.Point(3, 50);
-            this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(125, 50);
-            this.lblClassName.TabIndex = 3;
-            this.lblClassName.Text = "ClassName";
-            this.lblClassName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtbNamespace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtbNamespace.Location = new System.Drawing.Point(134, 3);
+            this.txtbNamespace.Name = "txtbNamespace";
+            this.txtbNamespace.Size = new System.Drawing.Size(301, 29);
+            this.txtbNamespace.TabIndex = 0;
+            // 
+            // txtbClassName
+            // 
+            this.txtbClassName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtbClassName.Location = new System.Drawing.Point(134, 53);
+            this.txtbClassName.Name = "txtbClassName";
+            this.txtbClassName.Size = new System.Drawing.Size(301, 29);
+            this.txtbClassName.TabIndex = 1;
             // 
             // lblNamespace
             // 
@@ -125,21 +129,17 @@
             this.lblNamespace.Text = "Namespace";
             this.lblNamespace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtbClassName
+            // lblClassName
             // 
-            this.txtbClassName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbClassName.Location = new System.Drawing.Point(134, 53);
-            this.txtbClassName.Name = "txtbClassName";
-            this.txtbClassName.Size = new System.Drawing.Size(301, 29);
-            this.txtbClassName.TabIndex = 1;
-            // 
-            // txtbNamespace
-            // 
-            this.txtbNamespace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbNamespace.Location = new System.Drawing.Point(134, 3);
-            this.txtbNamespace.Name = "txtbNamespace";
-            this.txtbNamespace.Size = new System.Drawing.Size(301, 29);
-            this.txtbNamespace.TabIndex = 0;
+            this.lblClassName.AutoSize = true;
+            this.lblClassName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblClassName.Font = new System.Drawing.Font("微軟正黑體", 9F);
+            this.lblClassName.Location = new System.Drawing.Point(3, 50);
+            this.lblClassName.Name = "lblClassName";
+            this.lblClassName.Size = new System.Drawing.Size(125, 50);
+            this.lblClassName.TabIndex = 3;
+            this.lblClassName.Text = "ClassName";
+            this.lblClassName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
             // 
