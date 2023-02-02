@@ -32,13 +32,14 @@
             this.btnOutput = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtbModelName = new System.Windows.Forms.TextBox();
-            this.lblModelName = new System.Windows.Forms.Label();
-            this.lblClassName = new System.Windows.Forms.Label();
-            this.lblNamespace = new System.Windows.Forms.Label();
-            this.txtbClassName = new System.Windows.Forms.TextBox();
-            this.txtbNamespace = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtbNamespace = new System.Windows.Forms.TextBox();
+            this.txtbClassName = new System.Windows.Forms.TextBox();
+            this.lblNamespace = new System.Windows.Forms.Label();
+            this.lblClassName = new System.Windows.Forms.Label();
+            this.lblModelName = new System.Windows.Forms.Label();
+            this.txtbModelName = new System.Windows.Forms.TextBox();
+            this.chkboxNetCore = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -56,7 +57,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 364F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(531, 51);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
@@ -99,37 +100,44 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(537, 257);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // txtbModelName
+            // tableLayoutPanel2
             // 
-            this.txtbModelName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbModelName.Location = new System.Drawing.Point(162, 103);
-            this.txtbModelName.Name = "txtbModelName";
-            this.txtbModelName.Size = new System.Drawing.Size(366, 29);
-            this.txtbModelName.TabIndex = 5;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.txtbNamespace, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtbClassName, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblNamespace, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblClassName, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblModelName, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtbModelName, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.chkboxNetCore, 1, 3);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(531, 194);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // lblModelName
+            // txtbNamespace
             // 
-            this.lblModelName.AutoSize = true;
-            this.lblModelName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblModelName.Font = new System.Drawing.Font("微軟正黑體", 9F);
-            this.lblModelName.Location = new System.Drawing.Point(3, 100);
-            this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(153, 50);
-            this.lblModelName.TabIndex = 4;
-            this.lblModelName.Text = "ModelName";
-            this.lblModelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtbNamespace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtbNamespace.Location = new System.Drawing.Point(162, 3);
+            this.txtbNamespace.Name = "txtbNamespace";
+            this.txtbNamespace.Size = new System.Drawing.Size(366, 29);
+            this.txtbNamespace.TabIndex = 0;
             // 
-            // lblClassName
+            // txtbClassName
             // 
-            this.lblClassName.AutoSize = true;
-            this.lblClassName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblClassName.Font = new System.Drawing.Font("微軟正黑體", 9F);
-            this.lblClassName.Location = new System.Drawing.Point(3, 50);
-            this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(153, 50);
-            this.lblClassName.TabIndex = 3;
-            this.lblClassName.Text = "ClassName";
-            this.lblClassName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtbClassName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtbClassName.Location = new System.Drawing.Point(162, 53);
+            this.txtbClassName.Name = "txtbClassName";
+            this.txtbClassName.Size = new System.Drawing.Size(366, 29);
+            this.txtbClassName.TabIndex = 1;
             // 
             // lblNamespace
             // 
@@ -143,43 +151,47 @@
             this.lblNamespace.Text = "Namespace";
             this.lblNamespace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtbClassName
+            // lblClassName
             // 
-            this.txtbClassName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbClassName.Location = new System.Drawing.Point(162, 53);
-            this.txtbClassName.Name = "txtbClassName";
-            this.txtbClassName.Size = new System.Drawing.Size(366, 29);
-            this.txtbClassName.TabIndex = 1;
+            this.lblClassName.AutoSize = true;
+            this.lblClassName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblClassName.Font = new System.Drawing.Font("微軟正黑體", 9F);
+            this.lblClassName.Location = new System.Drawing.Point(3, 50);
+            this.lblClassName.Name = "lblClassName";
+            this.lblClassName.Size = new System.Drawing.Size(153, 50);
+            this.lblClassName.TabIndex = 3;
+            this.lblClassName.Text = "ClassName";
+            this.lblClassName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtbNamespace
+            // lblModelName
             // 
-            this.txtbNamespace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbNamespace.Location = new System.Drawing.Point(162, 3);
-            this.txtbNamespace.Name = "txtbNamespace";
-            this.txtbNamespace.Size = new System.Drawing.Size(366, 29);
-            this.txtbNamespace.TabIndex = 0;
+            this.lblModelName.AutoSize = true;
+            this.lblModelName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblModelName.Font = new System.Drawing.Font("微軟正黑體", 9F);
+            this.lblModelName.Location = new System.Drawing.Point(3, 100);
+            this.lblModelName.Name = "lblModelName";
+            this.lblModelName.Size = new System.Drawing.Size(153, 50);
+            this.lblModelName.TabIndex = 4;
+            this.lblModelName.Text = "ModelName";
+            this.lblModelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tableLayoutPanel2
+            // txtbModelName
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.Controls.Add(this.txtbNamespace, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtbClassName, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblNamespace, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblClassName, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblModelName, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtbModelName, 1, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(531, 194);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.txtbModelName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtbModelName.Location = new System.Drawing.Point(162, 103);
+            this.txtbModelName.Name = "txtbModelName";
+            this.txtbModelName.Size = new System.Drawing.Size(366, 29);
+            this.txtbModelName.TabIndex = 5;
+            // 
+            // chkboxNetCore
+            // 
+            this.chkboxNetCore.AutoSize = true;
+            this.chkboxNetCore.Location = new System.Drawing.Point(162, 153);
+            this.chkboxNetCore.Name = "chkboxNetCore";
+            this.chkboxNetCore.Size = new System.Drawing.Size(310, 22);
+            this.chkboxNetCore.TabIndex = 6;
+            this.chkboxNetCore.Text = "使用ASP.Net Core (加入非同步呼叫)";
+            this.chkboxNetCore.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -212,6 +224,7 @@
         private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.Label lblModelName;
         private System.Windows.Forms.TextBox txtbModelName;
+        private System.Windows.Forms.CheckBox chkboxNetCore;
     }
 }
 

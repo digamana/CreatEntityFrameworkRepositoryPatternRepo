@@ -32,7 +32,7 @@ namespace CreatEntityFrameworkRepositoryPattern
                 MessageBox.Show($"ClassName 不可空白");
                 return;
             }
-             creator = new ICreator();
+             creator = new ICreator(chkboxNetCore.Checked);
             //取得指定路徑底下的所有資料夾名稱
            
             creator.CreatIRepository(txtbNamespace.Text);
