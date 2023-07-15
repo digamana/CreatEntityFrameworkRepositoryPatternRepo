@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\ASPNetCore_Have_Async.cs" />
+    <Compile Include="Domain\ASPNetFramework_No_Async.cs" />
+    <Compile Include="Domain\Dto\ArguName.cs" />
+    <Compile Include="Domain\Dto\FileNameType.cs" />
+    <Compile Include="Domain\Dto\WriteFile.cs" />
+    <Compile Include="Domain\IDomain\ICreatFile.cs" />
+    <Compile Include="Domain\WtihDapper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,5 +87,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

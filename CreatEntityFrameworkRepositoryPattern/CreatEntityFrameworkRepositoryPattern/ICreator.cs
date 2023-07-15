@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace CreatEntityFrameworkRepositoryPattern
 {
+    enum mode
+    {
+        WtihDapper,
+        ASPNetFramework_No_Async,
+        ASPNetCore_Have_Async
+    }
     public class ICreator
     {
         public string FilePath { get; private set; }

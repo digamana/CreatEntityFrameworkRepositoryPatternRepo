@@ -39,10 +39,14 @@
             this.lblClassName = new System.Windows.Forms.Label();
             this.lblModelName = new System.Windows.Forms.Label();
             this.txtbModelName = new System.Windows.Forms.TextBox();
-            this.chkboxNetCore = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.RdbNetCore = new System.Windows.Forms.RadioButton();
+            this.RdbNetFramework = new System.Windows.Forms.RadioButton();
+            this.RdbDapper = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -53,12 +57,12 @@
             this.tableLayoutPanel3.Controls.Add(this.btnOutput, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnOpen, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 203);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 293);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(531, 51);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(569, 68);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // btnOutput
@@ -67,7 +71,7 @@
             this.btnOutput.Font = new System.Drawing.Font("微軟正黑體", 9F);
             this.btnOutput.Location = new System.Drawing.Point(3, 3);
             this.btnOutput.Name = "btnOutput";
-            this.btnOutput.Size = new System.Drawing.Size(365, 45);
+            this.btnOutput.Size = new System.Drawing.Size(392, 62);
             this.btnOutput.TabIndex = 5;
             this.btnOutput.Text = "Output";
             this.btnOutput.UseVisualStyleBackColor = true;
@@ -77,9 +81,9 @@
             // 
             this.btnOpen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnOpen.Font = new System.Drawing.Font("微軟正黑體", 9F);
-            this.btnOpen.Location = new System.Drawing.Point(374, 3);
+            this.btnOpen.Location = new System.Drawing.Point(401, 3);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(154, 45);
+            this.btnOpen.Size = new System.Drawing.Size(165, 62);
             this.btnOpen.TabIndex = 6;
             this.btnOpen.Text = "OpenFolder";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -95,9 +99,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 290F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(537, 257);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(575, 364);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -111,7 +115,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblClassName, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblModelName, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtbModelName, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.chkboxNetCore, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -120,23 +124,23 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(531, 194);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(569, 284);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // txtbNamespace
             // 
             this.txtbNamespace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbNamespace.Location = new System.Drawing.Point(162, 3);
+            this.txtbNamespace.Location = new System.Drawing.Point(173, 3);
             this.txtbNamespace.Name = "txtbNamespace";
-            this.txtbNamespace.Size = new System.Drawing.Size(366, 29);
+            this.txtbNamespace.Size = new System.Drawing.Size(393, 29);
             this.txtbNamespace.TabIndex = 0;
             // 
             // txtbClassName
             // 
             this.txtbClassName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbClassName.Location = new System.Drawing.Point(162, 53);
+            this.txtbClassName.Location = new System.Drawing.Point(173, 53);
             this.txtbClassName.Name = "txtbClassName";
-            this.txtbClassName.Size = new System.Drawing.Size(366, 29);
+            this.txtbClassName.Size = new System.Drawing.Size(393, 29);
             this.txtbClassName.TabIndex = 1;
             // 
             // lblNamespace
@@ -146,7 +150,7 @@
             this.lblNamespace.Font = new System.Drawing.Font("微軟正黑體", 9F);
             this.lblNamespace.Location = new System.Drawing.Point(3, 0);
             this.lblNamespace.Name = "lblNamespace";
-            this.lblNamespace.Size = new System.Drawing.Size(153, 50);
+            this.lblNamespace.Size = new System.Drawing.Size(164, 50);
             this.lblNamespace.TabIndex = 2;
             this.lblNamespace.Text = "Namespace";
             this.lblNamespace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,7 +162,7 @@
             this.lblClassName.Font = new System.Drawing.Font("微軟正黑體", 9F);
             this.lblClassName.Location = new System.Drawing.Point(3, 50);
             this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(153, 50);
+            this.lblClassName.Size = new System.Drawing.Size(164, 50);
             this.lblClassName.TabIndex = 3;
             this.lblClassName.Text = "ClassName";
             this.lblClassName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,7 +174,7 @@
             this.lblModelName.Font = new System.Drawing.Font("微軟正黑體", 9F);
             this.lblModelName.Location = new System.Drawing.Point(3, 100);
             this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(153, 50);
+            this.lblModelName.Size = new System.Drawing.Size(164, 50);
             this.lblModelName.TabIndex = 4;
             this.lblModelName.Text = "ModelName";
             this.lblModelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,26 +182,64 @@
             // txtbModelName
             // 
             this.txtbModelName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtbModelName.Location = new System.Drawing.Point(162, 103);
+            this.txtbModelName.Location = new System.Drawing.Point(173, 103);
             this.txtbModelName.Name = "txtbModelName";
-            this.txtbModelName.Size = new System.Drawing.Size(366, 29);
+            this.txtbModelName.Size = new System.Drawing.Size(393, 29);
             this.txtbModelName.TabIndex = 5;
             // 
-            // chkboxNetCore
+            // panel1
             // 
-            this.chkboxNetCore.AutoSize = true;
-            this.chkboxNetCore.Location = new System.Drawing.Point(162, 153);
-            this.chkboxNetCore.Name = "chkboxNetCore";
-            this.chkboxNetCore.Size = new System.Drawing.Size(310, 22);
-            this.chkboxNetCore.TabIndex = 6;
-            this.chkboxNetCore.Text = "使用ASP.Net Core (加入非同步呼叫)";
-            this.chkboxNetCore.UseVisualStyleBackColor = true;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.RdbDapper);
+            this.panel1.Controls.Add(this.RdbNetFramework);
+            this.panel1.Controls.Add(this.RdbNetCore);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(173, 153);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(393, 128);
+            this.panel1.TabIndex = 7;
+            // 
+            // RdbNetCore
+            // 
+            this.RdbNetCore.AutoSize = true;
+            this.RdbNetCore.Location = new System.Drawing.Point(3, 41);
+            this.RdbNetCore.Name = "RdbNetCore";
+            this.RdbNetCore.Size = new System.Drawing.Size(309, 22);
+            this.RdbNetCore.TabIndex = 8;
+            this.RdbNetCore.TabStop = true;
+            this.RdbNetCore.Text = "使用ASP.Net Core (加入非同步呼叫)";
+            this.RdbNetCore.UseVisualStyleBackColor = true;
+            this.RdbNetCore.CheckedChanged += new System.EventHandler(this.RdbEvent);
+            // 
+            // RdbNetFramework
+            // 
+            this.RdbNetFramework.AutoSize = true;
+            this.RdbNetFramework.Location = new System.Drawing.Point(3, 3);
+            this.RdbNetFramework.Name = "RdbNetFramework";
+            this.RdbNetFramework.Size = new System.Drawing.Size(211, 22);
+            this.RdbNetFramework.TabIndex = 9;
+            this.RdbNetFramework.TabStop = true;
+            this.RdbNetFramework.Text = "使用ASP.Net Framework";
+            this.RdbNetFramework.UseVisualStyleBackColor = true;
+            this.RdbNetFramework.CheckedChanged += new System.EventHandler(this.RdbEvent);
+            // 
+            // RdbDapper
+            // 
+            this.RdbDapper.AutoSize = true;
+            this.RdbDapper.Location = new System.Drawing.Point(3, 81);
+            this.RdbDapper.Name = "RdbDapper";
+            this.RdbDapper.Size = new System.Drawing.Size(119, 22);
+            this.RdbDapper.TabIndex = 10;
+            this.RdbDapper.TabStop = true;
+            this.RdbDapper.Text = "適合Dapper";
+            this.RdbDapper.UseVisualStyleBackColor = true;
+            this.RdbDapper.CheckedChanged += new System.EventHandler(this.RdbEvent);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 257);
+            this.ClientSize = new System.Drawing.Size(575, 364);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -207,6 +249,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -224,7 +268,10 @@
         private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.Label lblModelName;
         private System.Windows.Forms.TextBox txtbModelName;
-        private System.Windows.Forms.CheckBox chkboxNetCore;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton RdbDapper;
+        private System.Windows.Forms.RadioButton RdbNetFramework;
+        private System.Windows.Forms.RadioButton RdbNetCore;
     }
 }
 

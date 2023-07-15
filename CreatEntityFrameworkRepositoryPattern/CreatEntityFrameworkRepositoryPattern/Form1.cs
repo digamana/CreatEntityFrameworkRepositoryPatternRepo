@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CreatEntityFrameworkRepositoryPattern.Domain.IDomain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using CreatEntityFrameworkRepositoryPattern.Domain;
+using CreatEntityFrameworkRepositoryPattern.Domain.Dto;
 
 namespace CreatEntityFrameworkRepositoryPattern
 {
@@ -22,32 +27,37 @@ namespace CreatEntityFrameworkRepositoryPattern
 
         private void btnOutput_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtbNamespace.Text))
+            WriteFile WF = WriteFile.Creat(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Output"),string.Empty);
+            ArguName AN = ArguName.Creat(txtbNamespace.Text,txtbClassName.Text,txtbModelName.Text);
+            ICreatFile creatFile = null;
+            if (RdbDapper.Checked)
             {
-                MessageBox.Show($"Namespace 不可空白");
-                return;
+                creatFile =new WtihDapper(AN, WF);
             }
-            else if (string.IsNullOrEmpty(txtbClassName.Text))
+            else if (RdbNetCore.Checked)
             {
-                MessageBox.Show($"ClassName 不可空白");
-                return;
+                creatFile = new ASPNetCore_Have_Async(AN, WF);
             }
-             creator = new ICreator(chkboxNetCore.Checked);
-            //取得指定路徑底下的所有資料夾名稱
-           
-            creator.CreatIRepository(txtbNamespace.Text);
-            creator.CreatIRepository(txtbNamespace.Text, txtbClassName.Text);
-            creator.CreatRepository(txtbNamespace.Text);
-            creator.CreatRepository(txtbNamespace.Text, txtbClassName.Text,txtbModelName.Text);
-            creator.CreatUnitOfWork(txtbNamespace.Text, txtbClassName.Text, txtbModelName.Text);
-            creator.CreatIUnitOfWork(txtbNamespace.Text, txtbClassName.Text);
-            Process.Start(creator.FilePath);
-
+            else if (RdbNetFramework.Checked)
+            {
+                creatFile = new ASPNetFramework_No_Async(AN, WF);
+            }
+            creatFile.CreatFile();
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
             Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Output"));
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RdbEvent(object sender, EventArgs e)
+        {
+
         }
     }
 }
